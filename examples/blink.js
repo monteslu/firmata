@@ -8,7 +8,7 @@ console.log("blink start ...");
 var ledPin = 13;
 
 var firmata = require("../lib/firmata");
-var board = new firmata.Board("/dev/cu.usbmodem1411", function(err) {
+var board = new firmata.Board("/dev/cu.usbmodem1411", {skipCapabilities: true}, function(err) {
   if (err) {
     console.log(err);
     return;
